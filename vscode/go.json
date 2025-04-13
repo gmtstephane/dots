@@ -1,0 +1,109 @@
+{
+	// Place your snippets for go here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Log and Return on Error": {
+		"prefix": "iferr",
+		"body": [
+			"if err != nil {",
+			"\tlog.Ctx(ctx).Err(err).Msg(\"error while ${1:doing something}\")",
+			"\treturn ${2:nil}",
+			"}"
+		],
+		"description": "Logs and returns on error using log.Ctx(ctx).Err(err)"
+	},
+	"if err != nil with log and return": {
+		"prefix": "ife",
+		"body": [
+			"if err != nil {",
+			"\tlog.Ctx(ctx).Err(err).Msg(\"${1:message}\")",
+			"\treturn ${2:nil}",
+			"}"
+		],
+		"description": "If error check with log.Ctx and return"
+	},
+	"log debug message": {
+		"prefix": "ld",
+		"body": [
+			"log.Ctx(ctx).Debug().Msg(\"${1:debug message}\")"
+		],
+		"description": "Log debug message with log.Ctx"
+	},
+	"log info message": {
+		"prefix": "li",
+		"body": [
+			"log.Ctx(ctx).Info().Msg(\"${1:info message}\")"
+		],
+		"description": "Log info message with log.Ctx"
+	},
+	"Service with Repository, Error and Method Stub": {
+		"prefix": "goservice",
+		"body": [
+			"type (",
+			"\t${2:Repository} interface {",
+			"\t\tDoSomething() error",
+			"\t}",
+			"",
+			"\t${1:Service} struct {",
+			"\t\trepo ${2:Repository}",
+			"\t}",
+			")",
+			"",
+			"var (",
+			"\tErrNotHandled error = errors.New(\"not implemented\")",
+			"\t_             error = nil",
+			")",
+			"",
+			"func New${1/(.*)/${1:/capitalize}/}(repo ${2:Repository}) *${1} {",
+			"\treturn &${1}{",
+			"\t\trepo: repo,",
+			"\t}",
+			"}",
+			"",
+			"func (s *${1}) Method(ctx context.Context) error {",
+			"\treturn ErrNotHandled",
+			"}"
+		],
+		"description": "Generates a service struct with repository, constructor, error var, and stub method"
+	},
+	"API Gateway Service Template": {
+		"prefix": "apigateway-service",
+		"body": [
+			"type (",
+			"\t${2:InterfaceName} interface {",
+			"\t\t${3:DoSomething}() error",
+			"\t}",
+			"",
+			"\t${1:ServiceName} struct {",
+			"\t\trepo ${2:InterfaceName}",
+			"\t}",
+			")",
+			"",
+			"var (",
+			"\tErrNotHandled error = errors.New(\"${4:not implemented}\")",
+			"\t_             error = nil",
+			")",
+			"",
+			"func New${1:ServiceName}(repo ${2:InterfaceName}) *${1:ServiceName} {",
+			"\treturn &${1:ServiceName}{",
+			"\t\trepo: repo,",
+			"\t}",
+			"}",
+			"",
+			"func (s *${1:ServiceName}) HandleFunc(ctx context.Context, req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {",
+			"\treturn events.APIGatewayProxyResponse{}, nil",
+			"}"
+		],
+		"description": "Template for an API Gateway service with placeholder for service and interface"
+	}
+}

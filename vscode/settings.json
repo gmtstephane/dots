@@ -1,0 +1,92 @@
+{
+  "errorLens.borderRadius": "0.3em",
+  "errorLens.messageBackgroundMode": "message",
+  "errorLens.enabled": true,
+  "errorLens.fontFamily": "IosevkaTerm Nerd Font",
+  "errorLens.padding": "1px 1ch",
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.gutterIconSet": "squareRounded",
+  "errorLens.delay": 500,
+  "editor.inlayHints.fontFamily": "IosevkaTerm Nerd Font",
+  "editor.scrollbar.horizontal": "hidden",
+
+  "editor.scrollbar.verticalScrollbarSize": 2,
+  "go.addTags": {
+    "tags": "json",
+    "options": "",
+    "promptForTags": false,
+    "transform": "snakecase"
+  },
+  "editor.snippetSuggestions": "top",
+  "go.testExplorer.enable": false,
+  "editor.indentSize": "tabSize",
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 13,
+  "editor.formatOnSave": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "line",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "git.openRepositoryInParentFolders": "never",
+  "window.titleBarStyle": "custom",
+  "go.useLanguageServer": true,
+  "go.testFlags": ["-v"],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  "gopls": {
+    "formatting.gofumpt": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    ".obsidian": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "editor.guides.highlightActiveIndentation": false,
+  "workbench.startupEditor": "none",
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": false,
+  "explorer.autoReveal": false,
+  "workbench.tree.indent": 4,
+  "explorer.fileNesting.expand": true,
+  "explorer.fileNesting.patterns": {
+    "*.go": "${capture}*_test.go,${capture}_mock.go"
+  },
+  "workbench.iconTheme": "catppuccin-latte",
+  "workbench.activityBar.location": "hidden",
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.colorTheme": "Gruvbox Material Dark",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "IosevkaTerm Nerd Font",
+  "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font, Monaco, 'Courier New', monospace",
+  "explorer.compactFolders": false,
+  "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.productIconTheme": "fluent-icons",
+  "extensions.ignoreRecommendations": true,
+  "workbench.editor.scrollToSwitchTabs": true,
+  "workbench.tree.renderIndentGuides": "onHover",
+  "editor.showFoldingControls": "never",
+  "editor.renderLineHighlight": "none",
+  "workbench.editor.revealIfOpen": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "errorLens.messageEnabled": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
+}
